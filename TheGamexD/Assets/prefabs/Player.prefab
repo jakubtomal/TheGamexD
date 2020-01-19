@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 6
+  jumpForce: 300
   rigidbody: {fileID: 1227771657110275364}
   animator: {fileID: 4249529833212003957}
 --- !u!65 &1227771657110275370

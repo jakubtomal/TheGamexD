@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         isJumping = true;
-        rigidbody.AddForce(Vector3.up * jumpForce , ForceMode.Impulse);
+        rigidbody.AddForce(Vector3.up * jumpForce * Time.fixedDeltaTime, ForceMode.Impulse);
     }
 
     private void Move()
