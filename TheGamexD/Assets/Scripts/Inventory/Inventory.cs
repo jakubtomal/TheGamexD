@@ -24,6 +24,8 @@ public class Inventory : MonoBehaviour
     private int slotCount;
     private int enabledSlotCount;
     private Slot[] slots;
+    [SerializeField]
+    private Item[] Weapons;
 
     private void Start()
     {
@@ -81,6 +83,26 @@ public class Inventory : MonoBehaviour
             
         }
 
+    }
+
+    public void EquipWepon(Item item)
+    {
+        switch(item.itemType)
+        {
+            case (ItemType.wepon):
+                foreach(Item weapon in Weapons)
+                {
+                    if(weapon.ID == item.ID)
+                    {
+                        weapon.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        weapon.gameObject.SetActive(false);
+                    }
+                }
+                break;
+        }
     }
 
 }

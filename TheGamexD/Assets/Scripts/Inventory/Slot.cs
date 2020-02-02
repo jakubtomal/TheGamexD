@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour
+public class Slot : MonoBehaviour, IPointerClickHandler
 {
     public Item item = null;
     public bool empty = true;
@@ -34,4 +35,15 @@ public class Slot : MonoBehaviour
         }
         
     }
+
+    public void UseItem()
+    {
+        item.GetComponent<Item>().ItemUsage();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        UseItem();
+    }
+
 }
