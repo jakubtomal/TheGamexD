@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public enum ItemType
-    {
-        wepon,
-        armor
-    }
     public ItemType itemType;
     public int ID;
     public string description;
