@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsRunning", false);
         }
+        
     }
 
     private void FixedUpdate()
@@ -40,7 +41,10 @@ public class PlayerMovement : MonoBehaviour
         Move();
         if (Input.GetButtonDown("Jump"))
         {
+            if(!isJumping)
+            {
             Jump();
+            }
         }
     }
 
