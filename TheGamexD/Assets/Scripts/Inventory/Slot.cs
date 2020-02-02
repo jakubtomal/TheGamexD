@@ -7,13 +7,31 @@ public class Slot : MonoBehaviour
 {
     public Item item = null;
     public bool empty = true;
-    public Sprite icon;
+    public Sprite icon = null;
     public Item.ItemType itemType;
+    public GameObject slotItemGo;
     public int ID;
     public string description;
 
+    private Color iconColor = Color.white;
+    private Color emptyColor = new Color(1, 1, 1, 0);
+
+    private void Start()
+    {
+        UpdateSlot();
+    }
+
     public void UpdateSlot()
     {
-        this.GetComponent<Image>().sprite = icon;
+        slotItemGo.GetComponent<Image>().sprite = icon;
+        if(icon == null)
+        {
+            slotItemGo.GetComponent<Image>().color = emptyColor;
+        }
+        else
+        {
+            slotItemGo.GetComponent<Image>().color = iconColor;
+        }
+        
     }
 }
