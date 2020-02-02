@@ -35,7 +35,6 @@ public class Inventory : MonoBehaviour
             slots[i] = slotHolder.transform.GetChild(i).GetComponent<Slot>();
             if(slots[i].item == null)
             {
-                Debug.Log("22222");
                 slots[i].empty = true;
             }
         }
@@ -62,10 +61,8 @@ public class Inventory : MonoBehaviour
 
     private void AddItem(Item item)
     {
-        Debug.LogError("add");
         for(int i = 0; i < slotCount; i++)
         {
-            Debug.LogError(slotCount);
             if(slots[i].empty)
             {
 
