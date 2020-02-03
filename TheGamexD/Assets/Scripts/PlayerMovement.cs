@@ -19,13 +19,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!isJumping)
-        {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.z = Input.GetAxisRaw("Vertical");
-        }
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.z = Input.GetAxisRaw("Vertical");
 
-        if (movement.magnitude > 0)
+        if (movement.magnitude > 0 && !isJumping)
         {
             animator.SetBool("IsRunning", true);
         }
