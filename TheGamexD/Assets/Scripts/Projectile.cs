@@ -18,6 +18,7 @@ public class Projectile : MonoBehaviour
     public void Shoot(Vector3 target)
     {
         hasTarget = true;
+        transform.LookAt(target);
         rigidbody.AddForce( (target - transform.position).normalized * speed * Time.deltaTime, ForceMode.Impulse);
     }
 
