@@ -9,6 +9,11 @@ public class EnemyController : MonoBehaviour
     private float Starthealth = 100;
     [SerializeField]
     private Image healthBar;
+    [SerializeField]
+    private float damage;
+    [SerializeField]
+    private float attackSpeed;
+    private bool isAttacking = false;
     private float health;
     private Animator myAnimtor;
     private WaitForSeconds dieDelay = new WaitForSeconds(3f);
@@ -39,5 +44,24 @@ public class EnemyController : MonoBehaviour
         myAnimtor.SetTrigger(triggerDead);
         yield return dieDelay;
         Destroy(gameObject);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        Player player = other.GetComponent<Player>();
+        if(player != null && !isAttacking)
+        {
+            StartCoroutine(Attack(player));
+        }
+    }
+
+    private IEnumerator Attack(Player player)
+    {
+        isAttacking = true;
+        myAnimtor.SetBool(attackingBool, true);
+        player.GetDamage(damage);
+        yield return new WaitForSeconds(1 / attackSpeed);
+        isAttacking = false;
+        myAnimtor.SetBool(attackingBool, false);
     }
 }
