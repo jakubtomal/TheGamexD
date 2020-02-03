@@ -148,7 +148,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 1
+  m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1405106798
@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Starthealth: 100
+  healthBar: {fileID: 1087041638}
 --- !u!135 &1076588940
 SphereCollider:
   m_ObjectHideFlags: 0
