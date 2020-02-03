@@ -31,7 +31,7 @@ public class ShootingController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            Projectile currentProjectile = Instantiate(projectile, transform.position, transform.rotation).GetComponent<Projectile>();
+            Projectile currentProjectile = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Projectile>();
             currentProjectile.Shoot(hit.point);
         }
         yield return new WaitForSeconds(1.0f / speed);
