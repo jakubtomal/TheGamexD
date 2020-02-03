@@ -1,27 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private float Starthealth = 1000;
+    [SerializeField]
+    private Image healthBar;
+    private float health;
+    private WaitForSeconds dieDelay = new WaitForSeconds(3f);
     void Start()
     {
-        
+        health = Starthealth;
+        healthBar.fillAmount = health / Starthealth;
     }
 
-    void Update()
+    public void GetDamage(float damage)
     {
-        
+        health -= damage;
+        healthBar.fillAmount = health / Starthealth;
+        if (health <= 0)
+        {
+            StartCoroutine(Die());
+        }
     }
 
-    public void Move()
+    private IEnumerator Die()
     {
-        Input.GetAxis("Horizontal");
-        Input.GetAxis("Vertical");
-    }
-
-    public void Go()
-    {
-
+        yield return dieDelay;
     }
 }
