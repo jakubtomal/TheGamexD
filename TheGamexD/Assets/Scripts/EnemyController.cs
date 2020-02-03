@@ -19,7 +19,6 @@ public class EnemyController : MonoBehaviour
         myAnimtor = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -36,7 +35,7 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator Die()
     {
-        myAnimtor.SetTrigger("IsDead");
+        myAnimtor.SetTrigger(triggerDead);
         yield return dieDelay;
         Destroy(gameObject);
     }
