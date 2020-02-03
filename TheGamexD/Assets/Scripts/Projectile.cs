@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     private bool hasTarget = false;
     [SerializeField]private float speed;
     private Rigidbody rigidbody;
+    [SerializeField]
+    private float damage;
 
     private void Awake()
     {
@@ -17,6 +19,15 @@ public class Projectile : MonoBehaviour
     {
         hasTarget = true;
         rigidbody.AddForce( (target - transform.position).normalized * speed * Time.deltaTime, ForceMode.Impulse);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+        if (enemy != null)
+        {
+            enemy.GetDamage(damage);
+        }
     }
 
 }
