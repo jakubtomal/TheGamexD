@@ -22,13 +22,19 @@ public class Projectile : MonoBehaviour
         rigidbody.AddForce( (target - transform.position).normalized * speed * Time.deltaTime, ForceMode.Impulse);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+        EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
         if (enemy != null)
         {
             enemy.GetDamage(damage);
+            Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        rigidbody.isKinematic = true;
     }
 
 }
