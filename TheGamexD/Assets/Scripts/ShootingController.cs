@@ -10,6 +10,11 @@ public class ShootingController : MonoBehaviour
     float speed;
     private bool isShooting = false;
 
+    private void OnEnable()
+    {
+        isShooting = false;
+    }
+
     void Start()
     {
         
