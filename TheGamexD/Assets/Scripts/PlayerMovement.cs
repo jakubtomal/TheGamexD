@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] 
+    private float moveSpeed;
+    [SerializeField] 
+    private float jumpForce;
     private bool isJumping = false;
     [SerializeField] private Rigidbody rigidbody;
     private Vector3 movement;
-    [SerializeField] private Animator animator;
+    [SerializeField] 
+    private Animator animator;
+    private Vector3 targetToLookAt;
     
     void Start()
     {
@@ -22,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.z = Input.GetAxisRaw("Vertical");
 
+        Rotate();
         if (movement.magnitude > 0 && !isJumping)
         {
             animator.SetBool("IsRunning", true);
@@ -54,6 +59,19 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         rigidbody.MovePosition(rigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    private void Rotate()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            targetToLookAt = hit.point;
+            targetToLookAt.y = transform.position.y;
+            transform.LookAt(targetToLookAt);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
