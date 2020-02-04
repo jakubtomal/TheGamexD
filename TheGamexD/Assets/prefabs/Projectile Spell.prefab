@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4265721525817537733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3804312480384599751}
   - {fileID: 6659037178908692462}
@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8cc44d23bdddd34f9ba7e808f360143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
-  damage: 10
+  speed: 80
+  damage: 50
 --- !u!1 &4713560565171954682
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -232,7 +232,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -348,7 +348,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4921,8 +4921,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 0.06203556, g: 0, b: 1, a: 1}
-  m_Intensity: 4
-  m_Range: 1
+  m_Intensity: 5
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
