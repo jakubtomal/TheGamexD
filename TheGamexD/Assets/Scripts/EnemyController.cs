@@ -13,14 +13,16 @@ public class EnemyController : MonoBehaviour
     private float damage;
     [SerializeField]
     private float attackSpeed;
-    private bool isAttacking = false;
+    private bool isAttacking;
     private float health;
     private Animator myAnimtor;
     private WaitForSeconds dieDelay = new WaitForSeconds(3f);
     //Animator
     private string triggerDead = "IsDead";
-    private string runningBool = "Running";
     private string attackingBool = "Attacking";
+
+    public bool IsAttacking { get => isAttacking; private set => isAttacking = value; }
+
     void Start()
     {
         health = Starthealth;
@@ -49,7 +51,7 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         Player player = other.GetComponent<Player>();
-        if(player != null && !isAttacking)
+        if(player != null && !IsAttacking)
         {
             StartCoroutine(Attack(player));
         }
@@ -57,11 +59,11 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator Attack(Player player)
     {
-        isAttacking = true;
+        IsAttacking = true;
         myAnimtor.SetBool(attackingBool, true);
         player.GetDamage(damage);
         yield return new WaitForSeconds(1 / attackSpeed);
-        isAttacking = false;
+        IsAttacking = false;
         myAnimtor.SetBool(attackingBool, false);
     }
 }
