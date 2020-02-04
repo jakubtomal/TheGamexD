@@ -25,16 +25,24 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
+        Player player = other.gameObject.GetComponent<Player>();
         if (enemy != null)
         {
             enemy.GetDamage(damage);
             Destroy(gameObject);
         }
+
+        if (player != null)
+        {
+            player.GetDamage(damage);
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        rigidbody.isKinematic = true;
+            rigidbody.isKinematic = true;
     }
 
 }
