@@ -17,6 +17,8 @@ public class EnemyMovement : MonoBehaviour
     private string runningBool = "Running";
     private Animator myAnimtor;
 
+    public static Player Player { get => player; private set => player = value; }
+    public float DistanceToPlayer { get => distanceToPlayer; private set => distanceToPlayer = value; }
 
     private void Awake()
     {
@@ -32,8 +34,8 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-        if(distanceToPlayer <= fieldOfView && !enemyController.IsAttacking)
+        DistanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        if(DistanceToPlayer <= fieldOfView && !enemyController.IsAttacking)
         {
             transform.LookAt(player.transform);
             transform.position += transform.forward * speed * Time.deltaTime;
