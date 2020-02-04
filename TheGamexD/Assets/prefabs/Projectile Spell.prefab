@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1516624149197535831}
   - component: {fileID: -3604601741332943680}
   - component: {fileID: -1988824208051093175}
+  - component: {fileID: 531385886641715793}
   m_Layer: 9
   m_Name: Projectile Spell
   m_TagString: Untagged
@@ -64,6 +65,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 80
   damage: 50
+--- !u!114 &531385886641715793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265721525817537733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73acc7e0156cb184f995618485a5dbbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0.1
 --- !u!1 &4713560565171954682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4908,7 +4922,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &3459007289935130870
 Light:
