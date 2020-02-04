@@ -592,6 +592,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bowWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 7998136145451767219, guid: 950c49d3a2dd3c9468141793bddacc13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6227718220746668196, guid: 950c49d3a2dd3c9468141793bddacc13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -679,11 +684,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: -7780734103960978560, guid: dfdde93a8fea26f4f8cf8da875cb64f7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ae187b8fabf927f4188db5a3954d2c7f, type: 2}
     - target: {fileID: -6057140222963153312, guid: dfdde93a8fea26f4f8cf8da875cb64f7,
         type: 3}
       propertyPath: m_Controller
@@ -744,6 +744,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7780734103960978560, guid: dfdde93a8fea26f4f8cf8da875cb64f7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae187b8fabf927f4188db5a3954d2c7f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfdde93a8fea26f4f8cf8da875cb64f7, type: 3}
 --- !u!4 &3145171790249579673 stripped
@@ -775,6 +780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: staffWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780681619638440647, guid: b8a7fc67766c67345a93366d36540bbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5780681619638077159, guid: b8a7fc67766c67345a93366d36540bbf,
         type: 3}
