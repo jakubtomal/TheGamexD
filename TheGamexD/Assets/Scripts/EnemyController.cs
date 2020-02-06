@@ -13,11 +13,15 @@ public class EnemyController : MonoBehaviour
     private Animator myAnimtor;
     private WaitForSeconds dieDelay = new WaitForSeconds(3f);
     private string triggerDead = "IsDead";
+    private bool isDead;
     public bool IsAttacking;
     public string attackingBool = "Attacking";
 
+    public bool IsDead { get => isDead; private set => isDead = value; }
+
     void Start()
     {
+        IsDead = false;
         health = Starthealth;
         myAnimtor = GetComponent<Animator>();
         healthBar.fillAmount = health / Starthealth;
@@ -35,6 +39,7 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator Die()
     {
+        IsDead = true;
         myAnimtor.SetTrigger(triggerDead);
         yield return dieDelay;
         Destroy(gameObject);
