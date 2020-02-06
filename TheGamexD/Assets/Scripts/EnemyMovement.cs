@@ -34,6 +34,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        if(enemyController.IsDead)
+        {
+            return;
+        }
         DistanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if(DistanceToPlayer <= fieldOfView && !enemyController.IsAttacking)
         {

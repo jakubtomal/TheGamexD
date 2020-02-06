@@ -27,7 +27,11 @@ public class EnemyRangeAttackController : MonoBehaviour
 
     private void Update()
     {
-        if(myEnemyMovement.DistanceToPlayer <= attackRange && !myEnemyController.IsAttacking)
+        if (myEnemyController.IsDead)
+        {
+            return;
+        }
+        if (myEnemyMovement.DistanceToPlayer <= attackRange && !myEnemyController.IsAttacking)
         {
             StartCoroutine(Attack(EnemyMovement.Player));
         }

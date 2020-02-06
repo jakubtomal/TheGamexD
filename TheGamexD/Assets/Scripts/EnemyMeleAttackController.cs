@@ -19,6 +19,10 @@ public class EnemyMeleAttackController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (myEnemyController.IsDead)
+        {
+            return;
+        }
         Player player = other.GetComponent<Player>();
         if (player != null && !myEnemyController.IsAttacking)
         {
