@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182439d1c891657499e473ef8cc4143f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 50
   attackSpeed: 10
   attackRange: 30
   projectile: {fileID: -1988824208051093175, guid: 6a7d281ca7bf10b4499417d02a51bc66,
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b19e5e8ad09d9f428cb303dbd4ed7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfView: 50
+  fieldOfView: 40
   speed: 1
 --- !u!114 &1440179566
 MonoBehaviour:
