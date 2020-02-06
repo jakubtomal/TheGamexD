@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b19e5e8ad09d9f428cb303dbd4ed7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldOfView: 5
+  fieldOfView: 25
   speed: 1
 --- !u!114 &7861425134472914741
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc66f1e2b7963904c8254675e29d7790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 50
   attackSpeed: 1
 --- !u!1 &1159745215084782
 GameObject:
