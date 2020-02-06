@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  attackSpeed: 10
+  attackSpeed: 5
   attackRange: 30
   projectile: {fileID: -1988824208051093175, guid: 6a7d281ca7bf10b4499417d02a51bc66,
     type: 3}
