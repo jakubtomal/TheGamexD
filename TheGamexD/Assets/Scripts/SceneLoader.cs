@@ -31,7 +31,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadGameOverScene()
     {
         Debug.Log("GG WP! YOU LOST!");
-        SceneManager.LoadScene("Game Over");
+        SceneManager.LoadScene("GameOver");
     }
 
     public void ExitGame()
