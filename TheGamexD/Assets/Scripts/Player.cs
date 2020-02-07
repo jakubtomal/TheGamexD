@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -30,5 +31,6 @@ public class Player : MonoBehaviour
     private IEnumerator Die()
     {
         yield return dieDelay;
+        SceneManager.LoadScene("GameOver");
     }
 }
